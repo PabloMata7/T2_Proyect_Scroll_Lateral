@@ -1,0 +1,59 @@
+# ===============================================
+# GIT IGNORE PROFESIONAL PARA UNITY
+# ===============================================
+
+# 1. GENERADOS POR UNITY (Siempre ignorar)
+# -----------------------------------------------
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Mm]emoryCaptures/
+/[Cc]hangeset/
+/[Pp]rofilerRecordings/
+/[Ss]nakemake/
+
+# 2. GENERADOS POR IDE / VISUAL STUDIO / RIDER
+# -----------------------------------------------
+.vs/
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+
+# 3. GENERADOS POR EL SISTEMA OPERATIVO
+# -----------------------------------------------
+# macOS
+.DS_Store
+# Windows
+[Tt]humbs.db
+
+# 4. PACKAGES & PAQUETES (Ignorar la caché de paquetes)
+# -----------------------------------------------
+# La carpeta entera de Packages se ignora primero
+/Packages/
+# ...pero se re-incluyen los archivos vitales para saber qué paquetes usar
+!/Packages/manifest.json
+!/Packages/packages-lock.json
+
+# 5. CONFIGURACIÓN LOCAL
+# -----------------------------------------------
+# Archivos generados que son locales al Editor de Unity de tu máquina
+# (Puedes encontrarlos dentro de ProjectSettings)
+/[Aa]ssets/**/[Rr]eimport[Ff]lag
+/[Aa]ssets/**/[Ss]ync[Ff]lag
+/[Aa]ssets/**/[Ll]ocal[Tt]emp/
+/[Aa]ssets/**/[Tt]emp/
+/[Aa]ssets/[Ss]cript[Tt]emplates/
+
+# Nota Importante: La clave es que la carpeta /Library/ se ignora por completo
+# ya que contiene toda la caché generada.
