@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
+
     public float moveSpeed = 8f;
     public float jumpForce = 14f;
     public float airControlDamping = 0.2f;
@@ -16,11 +18,25 @@ public class Player : MonoBehaviour
     private float horizontalInput;
     private bool isGrounded;
     private bool jumpRequested;
-    private bool facingRight = true;
+    public bool facingRight = true;
+
+    public Animator animator;
 
     private void Awake()
     {
+        // Si ya existe una instancia y no soy yo, me destruyo (Patrón Singleton básico)
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
+        // ASIGNACIÓN CRÍTICA: Aquí es donde "Instance" deja de ser null
+        Instance = this;
+
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+
     }
 
     // Start is called before the first frame update

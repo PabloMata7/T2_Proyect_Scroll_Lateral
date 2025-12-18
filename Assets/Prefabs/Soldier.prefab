@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &221922007123044026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5846425886114454843}
+  m_Layer: 0
+  m_Name: ArrowSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5846425886114454843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221922007123044026}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.337, y: 0.302, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3251418578327912000}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6076802078088336527
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,6 +132,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7878350319992209165, guid: e48d839a9faf5a443a9c43e105df01c0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5247342738348240296}
+    - targetCorrespondingSourceObject: {fileID: 7878350319992209165, guid: e48d839a9faf5a443a9c43e105df01c0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5846425886114454843}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: e48d839a9faf5a443a9c43e105df01c0, type: 3}
       insertIndex: -1
@@ -179,7 +213,7 @@ BoxCollider2D:
   m_Offset: {x: -0.015625, y: 1.578125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5294118, y: -1.9047619}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 0.53125, y: 0.65625}
     newSize: {x: 0.53125, y: 0.65625}
     adaptiveTilingThreshold: 0.5
@@ -201,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0c6dae81bc4fe4fbb5efdef612a927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
+  moveSpeed: 5
   jumpForce: 10
   airControlDamping: 0.2
   groundCheck: {fileID: 5247342738348240296}
@@ -209,6 +243,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  facingRight: 1
 --- !u!4 &3251418578327912000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: e48d839a9faf5a443a9c43e105df01c0, type: 3}
