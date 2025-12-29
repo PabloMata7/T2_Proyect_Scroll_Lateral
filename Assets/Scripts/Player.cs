@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     private bool jumpRequested;
     public bool facingRight = true;
 
+    public bool isShooting = false;
+
     private Animator animator;
 
     // Pre-cálculo de Hashes del Animator
@@ -116,11 +118,11 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(targetVelocityX, rb.velocity.y);
 
         // Gestión del Flip del sprite (Visual)
-        if (horizontalInput > 0 && !facingRight)
+        if (horizontalInput > 0 && !facingRight && !isShooting)
         {
             Flip();
         }
-        else if (horizontalInput < 0 && facingRight)
+        else if (horizontalInput < 0 && facingRight && !isShooting)
         {
             Flip();
         }

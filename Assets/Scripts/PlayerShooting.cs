@@ -8,10 +8,10 @@ public class PlayerShooting : MonoBehaviour
     public GameObject ArrowLeftPrefab;
 
     [SerializeField] private float spawnDelay = 0.7f;
+    private float lifeTime = 5.0f;
 
     [SerializeField] private float shootingAnimationDuration = 1.23f;
     private bool isShooting = false;
-    private WaitForSeconds _waitRemainingAnim;
 
     private void Awake()
     {
@@ -21,6 +21,12 @@ public class PlayerShooting : MonoBehaviour
             shootingAnimationDuration = spawnDelay + 0.1f;
         }
     }
+
+    private void Start()
+    {
+        //Destroy(gameObject, lifeTime);    
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && !isShooting)
@@ -32,6 +38,11 @@ public class PlayerShooting : MonoBehaviour
     private IEnumerator ShootSequence()
     {
         isShooting = true;
+
+        if (Player.Instance != null)
+        {
+            Player.Instance.isShooting = true;
+        }
 
         // 1. ACTIVAR ANIMACIÓN (INMEDIATO)
         // Queremos que el personaje empiece a moverse ya.
@@ -46,6 +57,11 @@ public class PlayerShooting : MonoBehaviour
 
         yield return new WaitForSeconds(shootingAnimationDuration - spawnDelay);
 
+        if (Player.Instance != null)
+        {
+            Player.Instance.isShooting = false;
+        }
+
         isShooting = false;
     }
 
@@ -55,11 +71,13 @@ public class PlayerShooting : MonoBehaviour
         {
             GameObject gameObject = Object.Instantiate(ArrowRightPrefab, base.transform.position, Quaternion.identity);
             Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), base.transform.parent.GetComponent<BoxCollider2D>());
+            Destroy(gameObject, lifeTime);
         }
         else
         {
             GameObject gameObject = Object.Instantiate(ArrowLeftPrefab, base.transform.position, Quaternion.Euler(0, 180, 0));
             Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), base.transform.parent.GetComponent<BoxCollider2D>());
+            Destroy(gameObject, lifeTime);
         }
     }
 }

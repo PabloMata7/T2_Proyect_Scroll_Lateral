@@ -9,6 +9,9 @@ public class GoblinBehaviour : MonoBehaviour
     public float attackRange = 1.2f;    // Distancia para golpear
     public float attackCooldown = 1.5f; // Tiempo entre golpes
 
+    public int goblinHealth = 3;
+    [SerializeField] private int currentHealth;
+
     public LayerMask playerLayer;
 
     private enum State { Idle, Chasing, Attacking }
@@ -21,8 +24,12 @@ public class GoblinBehaviour : MonoBehaviour
     private float lastAttackTime;
     private bool facingRight = true;
 
+    private bool isProvoked = false;
+
     private static readonly int SpeedHash = Animator.StringToHash("Speed");
     private static readonly int AttackHash = Animator.StringToHash("Attack");
+    private static readonly int DeathHash = Animator.StringToHash("Death");
+    private static readonly int HurtHash = Animator.StringToHash("Hurt");
 
     private void Awake()
     {
@@ -33,7 +40,7 @@ public class GoblinBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHealth = goblinHealth;
     }
 
     // Update is called once per frame
@@ -63,12 +70,19 @@ public class GoblinBehaviour : MonoBehaviour
                     currentState = State.Attacking;
                     rb.velocity = Vector2.zero;         // Frenamos en seco para atacar
                 }
-                else if (distanceToPlayer > detectionRange * 1.5f)
+                else
                 {
                     // para evitar que el enemigo "vibre" en el borde de detección.
-                    currentState = State.Idle;
-                    rb.velocity = Vector2.zero;
+                    float chaseDistance = isProvoked ? detectionRange * 3f : detectionRange * 1.5f;
+
+                    if(distanceToPlayer > chaseDistance)
+                    {
+                        currentState = State.Idle;
+                        rb.velocity = Vector2.zero;
+                        isProvoked = false;
+                    }
                 }
+                LookAtPlayer();
                 break;
             case State.Attacking:
                 Debug.Log("Atacando");
@@ -103,6 +117,45 @@ public class GoblinBehaviour : MonoBehaviour
         {
             MoveToPlayer();
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if(currentState != State.Attacking) //No interrumpir el ataque
+        {
+            currentState = State.Chasing;
+            isProvoked = true;
+
+            if (playerTransform == null && Player.Instance != null)
+            {
+                playerTransform = Player.Instance.transform;
+            }
+        }
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            anim.SetTrigger(HurtHash);
+        }
+    }
+
+    private void Die()
+    {
+        // 1. Desactivar físicas y scripts para que deje de atacar/moverse
+        rb.velocity = Vector2.zero;
+        //GetComponent<Collider2D>().enabled = false;
+        this.enabled = false; // Desactiva este script
+
+        // 2. Animación de muerte
+        anim.SetTrigger(DeathHash);
+
+        // 3. Destruir el objeto (con delay para que se vea la animación)
+        Destroy(gameObject, 2f);
     }
 
     private void MoveToPlayer()
