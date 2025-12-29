@@ -20,7 +20,14 @@ public class Player : MonoBehaviour
     private bool jumpRequested;
     public bool facingRight = true;
 
-    public Animator animator;
+    private Animator animator;
+
+    // OPTIMIZACIÓN C++ STYLE: Pre-cálculo de Hashes del Animator
+    // Evitamos usar strings en el Update (ahorro de CPU y GC)
+    private static readonly int SpeedHash = Animator.StringToHash("Speed");
+    private static readonly int GroundedHash = Animator.StringToHash("IsGrounded"); 
+    private static readonly int ShootHash = Animator.StringToHash("Shoot");
+    private static readonly int JumpHash = Animator.StringToHash("Jump");
 
     private void Awake()
     {
@@ -54,6 +61,7 @@ public class Player : MonoBehaviour
         {
             jumpRequested = true;
         }
+        UpdateAnimations();
     }
 
     private void FixedUpdate()
@@ -67,6 +75,29 @@ public class Player : MonoBehaviour
         {
             Jump();
             jumpRequested = false; // Consumimos el flag
+        }
+    }
+
+
+    private void UpdateAnimations()
+    {
+        if (animator == null) return;
+
+        // "Speed": Usamos el valor absoluto de la velocidad horizontal real.
+        // Mathf.Abs es necesario porque el Animator solo entiende magnitud (0 a infinito) para transiciones.
+        animator.SetFloat(SpeedHash, Mathf.Abs(rb.velocity.x));
+
+        // "IsGrounded": Sincronizamos el booleano físico con la máquina de estados.
+        animator.SetBool(GroundedHash, isGrounded);
+    }
+
+    // 2. Método público para activar la animación
+    // Lo hacemos público para que PlayerShooting.cs pueda llamarlo
+    public void TriggerShootAnim()
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger(ShootHash);
         }
     }
 

@@ -1186,6 +1186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArrowRightPrefab: {fileID: 8551428244084233612, guid: d92f67c73a04d574f837ba9815b7968c, type: 3}
   ArrowLeftPrefab: {fileID: 8551428244084233612, guid: fd8471f806b4df743af8247e8f268e2a, type: 3}
+  spawnDelay: 0.7
+  shootingAnimationDuration: 0.6
 --- !u!1 &2118511443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,6 +1358,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5787327799819897989, guid: 4d68df8b95d072146b74771c24644a4c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 38ee3d501bee71548ab6d493c8bfd4e6, type: 2}
     - target: {fileID: 8223497159586894249, guid: 4d68df8b95d072146b74771c24644a4c, type: 3}
       propertyPath: m_SortingOrder
       value: 10
