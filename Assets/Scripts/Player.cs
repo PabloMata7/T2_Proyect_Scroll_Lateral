@@ -22,12 +22,11 @@ public class Player : MonoBehaviour
 
     private Animator animator;
 
-    // OPTIMIZACIÓN C++ STYLE: Pre-cálculo de Hashes del Animator
+    // Pre-cálculo de Hashes del Animator
     // Evitamos usar strings en el Update (ahorro de CPU y GC)
     private static readonly int SpeedHash = Animator.StringToHash("Speed");
     private static readonly int GroundedHash = Animator.StringToHash("IsGrounded"); 
     private static readonly int ShootHash = Animator.StringToHash("Shoot");
-    private static readonly int JumpHash = Animator.StringToHash("Jump");
 
     private void Awake()
     {
