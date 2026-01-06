@@ -78,6 +78,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1160356261127867848, guid: e48d839a9faf5a443a9c43e105df01c0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 38ee3d501bee71548ab6d493c8bfd4e6, type: 2}
     - target: {fileID: 7878350319992209165, guid: e48d839a9faf5a443a9c43e105df01c0, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -171,7 +175,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
+<<<<<<< Updated upstream
   m_Material: {fileID: 6200000, guid: 536e65d011da1f54cb1cc1393811dda7, type: 2}
+=======
+  m_Material: {fileID: 6200000, guid: d55cc0a6cec64e743b2560d55eb3f0a6, type: 2}
+>>>>>>> Stashed changes
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -249,6 +257,16 @@ MonoBehaviour:
     m_Bits: 64
   facingRight: 1
   isShooting: 0
+<<<<<<< Updated upstream
+=======
+  dashDistance: 3
+  dashDuration: 0.4
+  dashCooldown: 1
+  isDashing: 0
+  ghostPrefab: {fileID: 5669505538340348554, guid: 723b57635d250194fb16df5bcc340955, type: 3}
+  ghostSpawnInterval: 0.05
+  poolSize: 30
+>>>>>>> Stashed changes
 --- !u!4 &3251418578327912000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: e48d839a9faf5a443a9c43e105df01c0, type: 3}
