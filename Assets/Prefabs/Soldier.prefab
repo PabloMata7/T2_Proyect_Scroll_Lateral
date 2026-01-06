@@ -171,7 +171,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 536e65d011da1f54cb1cc1393811dda7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -248,6 +248,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   facingRight: 1
+  isShooting: 0
 --- !u!4 &3251418578327912000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: e48d839a9faf5a443a9c43e105df01c0, type: 3}
