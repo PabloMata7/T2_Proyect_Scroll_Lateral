@@ -47,11 +47,12 @@ public class CamaraBoss : MonoBehaviour
         // que el límite anterior.
         
 
+
         // 3. Definir la posición final del frame
         // En X: Usamos _minX (que nunca disminuye).
         // En Y: Seguimos al target (o puedes bloquearlo si no quieres scroll vertical).
         // En Z: Mantenemos la Z original de la cámara (crítico para renderizado 2D).
-        Vector3 finalPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        Vector3 finalPosition = new Vector3(targetPosition.x, transform.position.y, transform.position.z);
 
         // 4. Aplicar movimiento suavizado
         // Usamos SmoothDamp para un movimiento orgánico en lugar de un Lerp lineal.
