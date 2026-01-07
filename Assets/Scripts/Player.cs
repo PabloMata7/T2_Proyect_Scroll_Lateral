@@ -5,7 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static Player Instance;
-
+    public float currentHealth;
+    public float maxHealth = 5.0f;
     public float moveSpeed = 8f;
     public float jumpForce = 14f;
     public float airControlDamping = 0.2f;
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     private Rigidbody2D rb;
+    public Animator anim;
     private float horizontalInput;
     private bool isGrounded;
     private bool jumpRequested;
@@ -76,7 +78,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -274,6 +276,28 @@ public class Player : MonoBehaviour
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        }
+    }
+    
+    public void Die()
+    {
+        rb.velocity = Vector2.zero;
+        this.enabled = false;
+        anim.SetTrigger("Death");
+        // Por ahora solo desactivamos el GameObject
+        Destroy(gameObject, 2f);
+        //Load Scene despues de segs
+    }
+    public void TakePlayerDamage(float damage)
+    {
+        currentHealth-= damage;
+        if (currentHealth<=0)
+        {
+            Die();
+        }
+        else
+        {
+            anim.SetTrigger("Hurt");
         }
     }
 }

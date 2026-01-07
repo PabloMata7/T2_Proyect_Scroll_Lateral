@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Destruction
   - Ground
+  - Spikes
   layers:
   - Default
   - TransparentFX
