@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     private Rigidbody2D rb;
-    public Animator anim;
     private float horizontalInput;
     private bool isGrounded;
     private bool jumpRequested;
@@ -52,6 +51,8 @@ public class Player : MonoBehaviour
     private static readonly int GroundedHash = Animator.StringToHash("IsGrounded"); 
     private static readonly int ShootHash = Animator.StringToHash("Shoot");
     private static readonly int DashHash = Animator.StringToHash("Dash");
+    private static readonly int HurtHash = Animator.StringToHash("Hurt");
+    private static readonly int DeathHash = Animator.StringToHash("Death");
 
     private void Awake()
     {
@@ -283,7 +284,7 @@ public class Player : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
         this.enabled = false;
-        anim.SetTrigger("Death");
+        animator.SetTrigger(DeathHash);
         // Por ahora solo desactivamos el GameObject
         Destroy(gameObject, 2f);
         //Load Scene despues de segs
@@ -297,7 +298,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            anim.SetTrigger("Hurt");
+            animator.SetTrigger(HurtHash);
         }
     }
 }

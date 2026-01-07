@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoblinBehaviour : MonoBehaviour
+public class CaballeritoBehaviour : MonoBehaviour
 {
     public float moveSpeed = 3f;
     public float detectionRange = 6f;   // Distancia para empezar a perseguir
@@ -56,8 +56,8 @@ public class GoblinBehaviour : MonoBehaviour
 
         float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
 
-        switch (currentState) 
-        { 
+        switch (currentState)
+        {
             case State.Idle:
                 if (distanceToPlayer < detectionRange)  // Si la distancia del goblin al jugador es menor que el rango de detección
                 {                                       // Pasamos al estado Chasing
@@ -75,7 +75,7 @@ public class GoblinBehaviour : MonoBehaviour
                     // para evitar que el enemigo "vibre" en el borde de detección.
                     float chaseDistance = isProvoked ? detectionRange * 3f : detectionRange * 1.5f;
 
-                    if(distanceToPlayer > chaseDistance)
+                    if (distanceToPlayer > chaseDistance)
                     {
                         currentState = State.Idle;
                         rb.velocity = Vector2.zero;
@@ -123,7 +123,7 @@ public class GoblinBehaviour : MonoBehaviour
     {
         currentHealth -= damage;
 
-        if(currentState != State.Attacking) //No interrumpir el ataque
+        if (currentState != State.Attacking) //No interrumpir el ataque
         {
             currentState = State.Chasing;
             isProvoked = true;
@@ -219,7 +219,6 @@ public class GoblinBehaviour : MonoBehaviour
         if (hitPlayer != null)
         {
             Debug.Log("¡Goblin golpeó al jugador!");
-
             Player.Instance.TakePlayerDamage(1.0f);
         }
     }

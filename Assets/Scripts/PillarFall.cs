@@ -24,7 +24,12 @@ public class PillarFall : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player")|| other.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Player.Instance.TakePlayerDamage(1.0f);
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.CompareTag("Ground"))
         {
             Destroy(gameObject);
         }

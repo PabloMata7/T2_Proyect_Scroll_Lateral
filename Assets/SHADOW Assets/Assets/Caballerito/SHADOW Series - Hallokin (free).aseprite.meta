@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 639034119257779622
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,8 +123,8 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: SHADOW Series - Hallokin (free)_Frame_0
     originalName: 
-    pivot: {x: 3.4615386, y: -2.0869565}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -143,8 +143,8 @@ ScriptedImporter:
     uvTransform: {x: 77, y: 219}
   - name: SHADOW Series - Hallokin (free)_Frame_1
     originalName: 
-    pivot: {x: 3.4615386, y: -2.0869565}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -163,8 +163,8 @@ ScriptedImporter:
     uvTransform: {x: 99, y: 95}
   - name: SHADOW Series - Hallokin (free)_Frame_2
     originalName: 
-    pivot: {x: 3.4615386, y: -2.0869565}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -183,8 +183,8 @@ ScriptedImporter:
     uvTransform: {x: 99, y: 126}
   - name: SHADOW Series - Hallokin (free)_Frame_3
     originalName: 
-    pivot: {x: 3.4615386, y: -2.1818182}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -203,8 +203,8 @@ ScriptedImporter:
     uvTransform: {x: 120, y: 95}
   - name: SHADOW Series - Hallokin (free)_Frame_4
     originalName: 
-    pivot: {x: 3.4615386, y: -2.1818182}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -223,8 +223,8 @@ ScriptedImporter:
     uvTransform: {x: 120, y: 125}
   - name: SHADOW Series - Hallokin (free)_Frame_5
     originalName: 
-    pivot: {x: 3.4615386, y: -2.1818182}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -243,8 +243,8 @@ ScriptedImporter:
     uvTransform: {x: 120, y: 155}
   - name: SHADOW Series - Hallokin (free)_Frame_6
     originalName: 
-    pivot: {x: 3.4615386, y: -2.0869565}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -263,8 +263,8 @@ ScriptedImporter:
     uvTransform: {x: 99, y: 157}
   - name: SHADOW Series - Hallokin (free)_Frame_7
     originalName: 
-    pivot: {x: 3.2857144, y: -2.2272727}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -283,8 +283,8 @@ ScriptedImporter:
     uvTransform: {x: 77, y: 189}
   - name: SHADOW Series - Hallokin (free)_Frame_8
     originalName: 
-    pivot: {x: 3.1333332, y: -2}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -303,8 +303,8 @@ ScriptedImporter:
     uvTransform: {x: 31, y: 150}
   - name: SHADOW Series - Hallokin (free)_Frame_9
     originalName: 
-    pivot: {x: 3.2857144, y: -2.0869565}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -323,8 +323,8 @@ ScriptedImporter:
     uvTransform: {x: 77, y: 95}
   - name: SHADOW Series - Hallokin (free)_Frame_10
     originalName: 
-    pivot: {x: 3.2857144, y: -2.0869565}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -343,8 +343,8 @@ ScriptedImporter:
     uvTransform: {x: 77, y: 126}
   - name: SHADOW Series - Hallokin (free)_Frame_11
     originalName: 
-    pivot: {x: 3.4615386, y: -2}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -363,8 +363,8 @@ ScriptedImporter:
     uvTransform: {x: 56, y: 194}
   - name: SHADOW Series - Hallokin (free)_Frame_12
     originalName: 
-    pivot: {x: 3.4615386, y: -1.92}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -383,8 +383,8 @@ ScriptedImporter:
     uvTransform: {x: 31, y: 214}
   - name: SHADOW Series - Hallokin (free)_Frame_13
     originalName: 
-    pivot: {x: 3.4615386, y: -1.92}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -403,8 +403,8 @@ ScriptedImporter:
     uvTransform: {x: 56, y: 95}
   - name: SHADOW Series - Hallokin (free)_Frame_14
     originalName: 
-    pivot: {x: 3.4615386, y: -2}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -423,8 +423,8 @@ ScriptedImporter:
     uvTransform: {x: 56, y: 226}
   - name: SHADOW Series - Hallokin (free)_Frame_15
     originalName: 
-    pivot: {x: 3.4615386, y: -1.92}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -443,8 +443,8 @@ ScriptedImporter:
     uvTransform: {x: 56, y: 128}
   - name: SHADOW Series - Hallokin (free)_Frame_16
     originalName: 
-    pivot: {x: 3.4615386, y: -2}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -463,8 +463,8 @@ ScriptedImporter:
     uvTransform: {x: 77, y: 157}
   - name: SHADOW Series - Hallokin (free)_Frame_17
     originalName: 
-    pivot: {x: 3.4615386, y: -2.0869565}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -483,8 +483,8 @@ ScriptedImporter:
     uvTransform: {x: 99, y: 188}
   - name: SHADOW Series - Hallokin (free)_Frame_18
     originalName: 
-    pivot: {x: 3.4615386, y: -1.92}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -503,8 +503,8 @@ ScriptedImporter:
     uvTransform: {x: 56, y: 161}
   - name: SHADOW Series - Hallokin (free)_Frame_19
     originalName: 
-    pivot: {x: 2.647059, y: -1.0212766}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -523,8 +523,8 @@ ScriptedImporter:
     uvTransform: {x: 31, y: 95}
   - name: SHADOW Series - Hallokin (free)_Frame_20
     originalName: 
-    pivot: {x: 2.5, y: -1}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -543,8 +543,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 124}
   - name: SHADOW Series - Hallokin (free)_Frame_21
     originalName: 
-    pivot: {x: 2.368421, y: -1}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -563,8 +563,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 68}
   - name: SHADOW Series - Hallokin (free)_Frame_22
     originalName: 
-    pivot: {x: 2.5, y: -1}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -583,8 +583,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 180}
   - name: SHADOW Series - Hallokin (free)_Frame_23
     originalName: 
-    pivot: {x: 2.8125, y: -1.92}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -603,7 +603,7 @@ ScriptedImporter:
     uvTransform: {x: 235, y: 4}
   - name: SHADOW Series - Hallokin (free)_Frame_24
     originalName: 
-    pivot: {x: 1.1489362, y: -2.173913}
+    pivot: {x: 0.35195643, y: 0.0941143}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -623,7 +623,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 37}
   - name: SHADOW Series - Hallokin (free)_Frame_25
     originalName: 
-    pivot: {x: 1.0816327, y: -1.9599999}
+    pivot: {x: 0.31255886, y: 0.03241972}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -643,7 +643,7 @@ ScriptedImporter:
     uvTransform: {x: 62, y: 4}
   - name: SHADOW Series - Hallokin (free)_Frame_26
     originalName: 
-    pivot: {x: 1.0600001, y: -2.0416667}
+    pivot: {x: 0.30517456, y: 0.02453365}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -663,7 +663,7 @@ ScriptedImporter:
     uvTransform: {x: 119, y: 4}
   - name: SHADOW Series - Hallokin (free)_Frame_27
     originalName: 
-    pivot: {x: 1.0600001, y: -1.9599999}
+    pivot: {x: 0.2996084, y: 0.02128687}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -683,8 +683,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: SHADOW Series - Hallokin (free)_Frame_28
     originalName: 
-    pivot: {x: 3.4615386, y: -2.0869565}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -703,8 +703,8 @@ ScriptedImporter:
     uvTransform: {x: 99, y: 219}
   - name: SHADOW Series - Hallokin (free)_Frame_29
     originalName: 
-    pivot: {x: 2.647059, y: -2.1818182}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -723,8 +723,8 @@ ScriptedImporter:
     uvTransform: {x: 232, y: 37}
   - name: SHADOW Series - Hallokin (free)_Frame_30
     originalName: 
-    pivot: {x: 1.1489362, y: -2.5263157}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -743,7 +743,7 @@ ScriptedImporter:
     uvTransform: {x: 31, y: 68}
   - name: SHADOW Series - Hallokin (free)_Frame_31
     originalName: 
-    pivot: {x: 1.1020408, y: -2.4}
+    pivot: {x: 0.35231858, y: 0.040768623}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -763,7 +763,7 @@ ScriptedImporter:
     uvTransform: {x: 175, y: 37}
   - name: SHADOW Series - Hallokin (free)_Frame_32
     originalName: 
-    pivot: {x: 1.0799999, y: -2.2857144}
+    pivot: {x: 0.3497061, y: 0.03612954}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -783,7 +783,7 @@ ScriptedImporter:
     uvTransform: {x: 59, y: 37}
   - name: SHADOW Series - Hallokin (free)_Frame_33
     originalName: 
-    pivot: {x: 1.0799999, y: -2.2857144}
+    pivot: {x: 0.31074128, y: 0.022876922}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -803,7 +803,7 @@ ScriptedImporter:
     uvTransform: {x: 117, y: 37}
   - name: SHADOW Series - Hallokin (free)_Frame_34
     originalName: 
-    pivot: {x: 1.0799999, y: -2.1818182}
+    pivot: {x: 0.32187378, y: 0.01926251}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -823,8 +823,8 @@ ScriptedImporter:
     uvTransform: {x: 177, y: 4}
   - name: SHADOW Series - Hallokin (free)_Frame_35
     originalName: 
-    pivot: {x: 3.2142859, y: -2}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -1140,7 +1140,31 @@ ScriptedImporter:
       spriteId: 99ae60871d1f5924d98dc75c82513420
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 

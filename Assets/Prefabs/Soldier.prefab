@@ -78,6 +78,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: e48d839a9faf5a443a9c43e105df01c0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: e48d839a9faf5a443a9c43e105df01c0, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -239,6 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0c6dae81bc4fe4fbb5efdef612a927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 5
   moveSpeed: 5
   jumpForce: 10
   airControlDamping: 0.2
