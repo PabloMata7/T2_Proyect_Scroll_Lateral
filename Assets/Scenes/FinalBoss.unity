@@ -2189,6 +2189,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2473738484193585506, guid: 66d78505d66de614799fc7f6de633285, type: 3}
+      propertyPath: attackRange
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473738484193585506, guid: 66d78505d66de614799fc7f6de633285, type: 3}
+      propertyPath: detectionRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155461653830030989, guid: 66d78505d66de614799fc7f6de633285, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6ca477effe410954f8c66fd888409ace, type: 2}
     - target: {fileID: 6234564799455487048, guid: 66d78505d66de614799fc7f6de633285, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.55
@@ -2199,7 +2211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6234564799455487048, guid: 66d78505d66de614799fc7f6de633285, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.65
+      value: 47.14
       objectReference: {fileID: 0}
     - target: {fileID: 6234564799455487048, guid: 66d78505d66de614799fc7f6de633285, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2239,7 +2251,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6586625680706194477, guid: 66d78505d66de614799fc7f6de633285, type: 3}
       propertyPath: m_Name
-      value: SHADOW Series - The Shadowed Wetlands Boss
+      value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586625680706194477, guid: 66d78505d66de614799fc7f6de633285, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586625680706194477, guid: 66d78505d66de614799fc7f6de633285, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2316,8 +2336,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.25, y: 0.890625}
-  m_Size: {x: 2.28125, y: 1.78125}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 3, y: 3}
   m_Direction: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
