@@ -2,31 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class DestructionFirst : MonoBehaviour
 {
-   
+
+
     // Start is called before the first frame update
-    private Rigidbody2D rb;
+    public PillarFall pillarFall;
     void Start()
     {
-        rb= GetComponent<Rigidbody2D>();
-        rb.isKinematic=true;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    public void OpenDoor()
-    {
-        rb.isKinematic=false;
-        rb.bodyType = RigidbodyType2D.Dynamic;
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Destruction"))
+        if (other.gameObject.CompareTag("Player"))
         {
+            if (pillarFall != null)
+            {
+                pillarFall.FallPillar();
+            }
+
             Destroy(gameObject);
         }
     }
