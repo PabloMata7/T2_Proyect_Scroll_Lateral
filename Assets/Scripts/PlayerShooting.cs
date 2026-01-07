@@ -29,7 +29,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !isShooting)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && !isShooting && !Player.Instance.isDashing)
         {
             StartCoroutine(ShootSequence());
         }
