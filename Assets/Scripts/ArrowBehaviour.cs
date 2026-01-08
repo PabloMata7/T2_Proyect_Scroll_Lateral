@@ -21,6 +21,10 @@ public class ArrowBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log($"Flecha tocó: {other.gameObject.name} | Tag: {other.tag} | Layer: {other.gameObject.layer}");
+        if (other.gameObject.CompareTag("Destruction"))
+        {
+            Destroy(gameObject);
+        }
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Golpea la flecha");
