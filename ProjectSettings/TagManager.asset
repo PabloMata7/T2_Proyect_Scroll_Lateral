@@ -9,6 +9,7 @@ TagManager:
   - Destruction
   - Ground
   - Spikes
+  - Despawn
   layers:
   - Default
   - TransparentFX
