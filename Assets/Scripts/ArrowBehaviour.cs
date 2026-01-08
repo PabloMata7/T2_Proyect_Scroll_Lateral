@@ -25,7 +25,7 @@ public class ArrowBehaviour : MonoBehaviour
         {
             Debug.Log("Golpea la flecha");
 
-            GoblinBehaviour enemy = other.GetComponent<GoblinBehaviour>();
+            EnemyBehaviour enemy = other.GetComponent<EnemyBehaviour>();
 
             if (enemy != null)
             {
