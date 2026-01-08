@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
     private float horizontalInput;
-    private bool isGrounded;
+    public bool isGrounded;
     private bool jumpRequested;
     public bool facingRight = true;
 
@@ -301,4 +302,5 @@ public class Player : MonoBehaviour
             animator.SetTrigger(HurtHash);
         }
     }
+    
 }

@@ -2197,10 +2197,30 @@ PrefabInstance:
       propertyPath: detectionRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2473738484193585506, guid: 66d78505d66de614799fc7f6de633285, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 3155461653830030989, guid: 66d78505d66de614799fc7f6de633285, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6ca477effe410954f8c66fd888409ace, type: 2}
+    - target: {fileID: 4022856759735631708, guid: 66d78505d66de614799fc7f6de633285, type: 3}
+      propertyPath: attackRange
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022856759735631708, guid: 66d78505d66de614799fc7f6de633285, type: 3}
+      propertyPath: enemyHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022856759735631708, guid: 66d78505d66de614799fc7f6de633285, type: 3}
+      propertyPath: detectionRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022856759735631708, guid: 66d78505d66de614799fc7f6de633285, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 6234564799455487048, guid: 66d78505d66de614799fc7f6de633285, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.55
@@ -2303,7 +2323,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &6211192637196951321
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2336,8 +2356,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 3, y: 3}
+  m_Offset: {x: -0.0045087263, y: 0.8373531}
+  m_Size: {x: 0.9775716, y: 1.940998}
   m_Direction: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
