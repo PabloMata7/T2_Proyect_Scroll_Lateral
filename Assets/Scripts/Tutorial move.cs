@@ -32,6 +32,5 @@ public class Tutorialmove : MonoBehaviour
     void OcultarTexto()
     {
         text.SetActive(false);
-        Destroy(gameObject);
     }
 }
