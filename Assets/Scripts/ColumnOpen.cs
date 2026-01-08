@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class ColumnOpen : MonoBehaviour
 {
+    [Header("Configuración")]
     // Start is called before the first frame update
     public GameObject DoorOpen;
     public float ColumnLife = 2.0f;
+    public Sprite[] spritesRotura;
 
-    public Color colorBrillo = Color.yellow;
-    public float velocidad = 2f;
-    public float intensidadMax = 3f;
+    private SpriteRenderer _spriteRenderer;
+    private int _indiceRotura = 0;
 
     private Material material;
     void Start()
     {
-        material = GetComponent<Renderer>().material;
-        material.EnableKeyword("_EMISSION");
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float intensidad = Mathf.PingPong(Time.time * velocidad, intensidadMax);
-        material.SetColor("_EmissionColor", colorBrillo * intensidad);
+        
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -34,6 +33,10 @@ public class ColumnOpen : MonoBehaviour
             if (ColumnLife <= 0)
             {
                 Destroy(gameObject);
+            }
+            else
+            {
+                ChangeSprite();
             }
         }
     }
@@ -48,4 +51,18 @@ public class ColumnOpen : MonoBehaviour
             }
         }
     }
+    void ChangeSprite()
+    {
+        // Verificamos que no nos salgamos del límite del array para evitar errores
+        if (_indiceRotura < spritesRotura.Length)
+        {
+            // Asignamos la nueva imagen al componente SpriteRenderer
+            _spriteRenderer.sprite = spritesRotura[_indiceRotura];
+
+            // Aumentamos el índice para que la próxima vez coja la siguiente imagen
+            _indiceRotura++;
+        }
+    }
+
+
 }
