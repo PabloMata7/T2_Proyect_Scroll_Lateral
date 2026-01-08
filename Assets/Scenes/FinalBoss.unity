@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 52147981}
   - component: {fileID: 52147983}
   - component: {fileID: 52147982}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: PlatformAssets_5 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 63536585}
   - component: {fileID: 63536587}
   - component: {fileID: 63536586}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: PlatformAssets_9 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -956,6 +956,10 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 450231348900566316, guid: 4d68df8b95d072146b74771c24644a4c, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 1088
+      objectReference: {fileID: 0}
     - target: {fileID: 2374137490195912229, guid: 4d68df8b95d072146b74771c24644a4c, type: 3}
       propertyPath: m_Name
       value: Soldier
@@ -966,7 +970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3251418578327912000, guid: 4d68df8b95d072146b74771c24644a4c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.3
+      value: 35.4
       objectReference: {fileID: 0}
     - target: {fileID: 3251418578327912000, guid: 4d68df8b95d072146b74771c24644a4c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1031,7 +1035,7 @@ GameObject:
   - component: {fileID: 1142636736}
   - component: {fileID: 1142636735}
   - component: {fileID: 1142636734}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: PlatformAssets_5 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1498,7 +1502,7 @@ Transform:
   m_GameObject: {fileID: 1249332062}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.2, y: 0, z: -10}
+  m_LocalPosition: {x: 35.3, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2062,7 +2066,7 @@ GameObject:
   - component: {fileID: 2018406050}
   - component: {fileID: 2018406052}
   - component: {fileID: 2018406051}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: PlatformAssets_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2373,6 +2377,22 @@ PrefabInstance:
       propertyPath: playerLayer.m_Bits
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: 4854514667447797301, guid: 66d78505d66de614799fc7f6de633285, type: 3}
+      propertyPath: attackRange
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854514667447797301, guid: 66d78505d66de614799fc7f6de633285, type: 3}
+      propertyPath: attackCooldown
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854514667447797301, guid: 66d78505d66de614799fc7f6de633285, type: 3}
+      propertyPath: detectionRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854514667447797301, guid: 66d78505d66de614799fc7f6de633285, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 6234564799455487048, guid: 66d78505d66de614799fc7f6de633285, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.55
@@ -2439,9 +2459,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6586625680706194477, guid: 66d78505d66de614799fc7f6de633285, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6211192637196951321}
-    - targetCorrespondingSourceObject: {fileID: 6586625680706194477, guid: 66d78505d66de614799fc7f6de633285, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6211192637196951320}
   m_SourcePrefab: {fileID: 100100000, guid: 66d78505d66de614799fc7f6de633285, type: 3}
 --- !u!1 &6211192637196951319 stripped
@@ -2476,41 +2493,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &6211192637196951321
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6211192637196951319}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0045087263, y: 0.8373531}
-  m_Size: {x: 0.9775716, y: 1.940998}
-  m_Direction: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

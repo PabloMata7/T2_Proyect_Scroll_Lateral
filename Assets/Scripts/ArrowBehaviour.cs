@@ -30,10 +30,15 @@ public class ArrowBehaviour : MonoBehaviour
             Debug.Log("Golpea la flecha");
 
             EnemyBehaviour enemy = other.GetComponent<EnemyBehaviour>();
+            BossBehaviour boss = other.GetComponent<BossBehaviour>();
 
             if (enemy != null)
             {
                 enemy.TakeDamage(1);
+            }
+            if (boss != null)
+            {
+                boss.TakeDamage(1);
             }
 
             Destroy(gameObject);

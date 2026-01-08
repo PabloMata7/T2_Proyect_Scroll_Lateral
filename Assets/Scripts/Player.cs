@@ -290,6 +290,7 @@ public class Player : MonoBehaviour
         Destroy(gameObject, 2f);
         //Load Scene despues de segs
     }
+
     public void TakePlayerDamage(float damage)
     {
         currentHealth-= damage;
