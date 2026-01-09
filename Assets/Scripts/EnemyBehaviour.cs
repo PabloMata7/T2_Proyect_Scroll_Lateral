@@ -6,7 +6,8 @@ public class EnemyBehaviour : MonoBehaviour
 {
     [Header("Audio")]
     public AudioSource audioSource;
-    public AudioClip atacksound;
+    public AudioClip atackSound;
+    public AudioClip hitSound;
 
     public float moveSpeed = 3f;
     public float detectionRange = 6f;   // Distancia para empezar a perseguir
@@ -237,11 +238,20 @@ public class EnemyBehaviour : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange); // Rango ataque
     }
-    private void PlaySound()
+    private void AttackSound()
     {
-        if(audioSource != null && atacksound != null)
+        if(audioSource != null && atackSound != null)
         {
-            audioSource.PlayOneShot(atacksound);
+            audioSource.PlayOneShot(atackSound);
         }
     }
+
+    private void HitSound()
+    {
+        if (audioSource != null && hitSound != null)
+        {
+            audioSource.PlayOneShot(hitSound);
+        }
+    }
+
 }

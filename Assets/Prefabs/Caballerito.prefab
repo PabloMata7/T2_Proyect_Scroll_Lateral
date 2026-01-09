@@ -115,7 +115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: -4062656792389202080}
-  atacksound: {fileID: 8300000, guid: 36b7dfc8fe4a8fb4984c7776b16e2228, type: 3}
+  atackSound: {fileID: 8300000, guid: 36b7dfc8fe4a8fb4984c7776b16e2228, type: 3}
+  hitSound: {fileID: 8300000, guid: be9caa1e84a461447afe44e92faa16f6, type: 3}
   moveSpeed: 3
   detectionRange: 6
   attackRange: 1.5
