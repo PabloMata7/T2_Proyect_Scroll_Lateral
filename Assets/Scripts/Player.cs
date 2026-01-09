@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip atacksound;
+
     public static Player Instance;
     public float currentHealth;
     public float maxHealth = 5.0f;
@@ -303,5 +307,12 @@ public class Player : MonoBehaviour
             animator.SetTrigger(HurtHash);
         }
     }
-    
+    private void PlaySound()
+    {
+        if (audioSource != null && atacksound != null)
+        {
+            audioSource.PlayOneShot(atacksound);
+        }
+    }
+
 }

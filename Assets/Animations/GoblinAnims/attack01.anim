@@ -90,6 +90,8 @@ AnimationClip:
   m_Events:
   - time: 0.31
     functionName: PerformDamageCheck
+  - time: 0.14
+    functionName: PlaySound
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
