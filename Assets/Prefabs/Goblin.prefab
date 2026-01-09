@@ -107,7 +107,7 @@ MonoBehaviour:
   detectionRange: 6
   attackRange: 1.5
   attackCooldown: 1.5
-  goblinHealth: 3
+  enemyHealth: 3
   currentHealth: 0
   playerLayer:
     serializedVersion: 2
@@ -137,7 +137,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &592718788048721056
 BoxCollider2D:
