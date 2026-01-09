@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoblinBehaviour : MonoBehaviour
+public class EnemyBehaviour : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip atacksound;
+
     public float moveSpeed = 3f;
     public float detectionRange = 6f;   // Distancia para empezar a perseguir
     public float attackRange = 1.2f;    // Distancia para golpear
     public float attackCooldown = 1.5f; // Tiempo entre golpes
 
-    public int goblinHealth = 3;
+    public int enemyHealth = 3;
     [SerializeField] private int currentHealth;
 
     public LayerMask playerLayer;
@@ -31,6 +35,8 @@ public class GoblinBehaviour : MonoBehaviour
     private static readonly int DeathHash = Animator.StringToHash("Death");
     private static readonly int HurtHash = Animator.StringToHash("Hurt");
 
+    
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,7 +46,7 @@ public class GoblinBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = goblinHealth;
+        currentHealth = enemyHealth;
     }
 
     // Update is called once per frame
@@ -56,16 +62,16 @@ public class GoblinBehaviour : MonoBehaviour
 
         float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
 
-        switch (currentState) 
-        { 
+        switch (currentState)
+        {
             case State.Idle:
-                if (distanceToPlayer < detectionRange)  // Si la distancia del goblin al jugador es menor que el rango de detección
+                if (distanceToPlayer < detectionRange)  // Si la distancia del enemigo al jugador es menor que el rango de detección
                 {                                       // Pasamos al estado Chasing
                     currentState = State.Chasing;
                 }
                 break;
             case State.Chasing:
-                if (distanceToPlayer <= attackRange)    // Si la distancia entre el goblin y el jugador es menor al rango de ataque, ataca
+                if (distanceToPlayer <= attackRange)    // Si la distancia entre el enemigo y el jugador es menor al rango de ataque, ataca
                 {
                     currentState = State.Attacking;
                     rb.velocity = Vector2.zero;         // Frenamos en seco para atacar
@@ -75,7 +81,7 @@ public class GoblinBehaviour : MonoBehaviour
                     // para evitar que el enemigo "vibre" en el borde de detección.
                     float chaseDistance = isProvoked ? detectionRange * 3f : detectionRange * 1.5f;
 
-                    if(distanceToPlayer > chaseDistance)
+                    if (distanceToPlayer > chaseDistance)
                     {
                         currentState = State.Idle;
                         rb.velocity = Vector2.zero;
@@ -123,7 +129,7 @@ public class GoblinBehaviour : MonoBehaviour
     {
         currentHealth -= damage;
 
-        if(currentState != State.Attacking) //No interrumpir el ataque
+        if (currentState != State.Attacking) //No interrumpir el ataque
         {
             currentState = State.Chasing;
             isProvoked = true;
@@ -219,7 +225,7 @@ public class GoblinBehaviour : MonoBehaviour
         if (hitPlayer != null)
         {
             Debug.Log("¡Goblin golpeó al jugador!");
-            // Aquí llamamos a: hitPlayer.GetComponent<PlayerHealth>().TakeDamage(1);
+            Player.Instance.TakePlayerDamage(1.0f);
         }
     }
 
@@ -230,5 +236,12 @@ public class GoblinBehaviour : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange); // Rango ataque
+    }
+    private void PlaySound()
+    {
+        if(audioSource != null && atacksound != null)
+        {
+            audioSource.PlayOneShot(atacksound);
+        }
     }
 }

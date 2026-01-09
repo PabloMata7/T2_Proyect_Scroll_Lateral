@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlatformDestroy : MonoBehaviour
 {
-    public float delay =2.0f;
+    public float delay =1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,7 @@ public class PlatformDestroy : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {

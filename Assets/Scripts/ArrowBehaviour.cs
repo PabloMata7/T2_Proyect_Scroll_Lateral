@@ -21,15 +21,24 @@ public class ArrowBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log($"Flecha tocó: {other.gameObject.name} | Tag: {other.tag} | Layer: {other.gameObject.layer}");
+        if (other.gameObject.CompareTag("Destruction"))
+        {
+            Destroy(gameObject);
+        }
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Golpea la flecha");
 
-            GoblinBehaviour enemy = other.GetComponent<GoblinBehaviour>();
+            EnemyBehaviour enemy = other.GetComponent<EnemyBehaviour>();
+            BossBehaviour boss = other.GetComponent<BossBehaviour>();
 
             if (enemy != null)
             {
                 enemy.TakeDamage(1);
+            }
+            if (boss != null)
+            {
+                boss.TakeDamage(1);
             }
 
             Destroy(gameObject);

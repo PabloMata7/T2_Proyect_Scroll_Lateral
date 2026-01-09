@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Arrow
   - Enemy
+  - Destruction
+  - Ground
+  - Spikes
+  - Despawn
+  - Entrance
   layers:
   - Default
   - TransparentFX
@@ -17,6 +22,8 @@ TagManager:
   - Player
   - Enemy
   - 
+  - PassablePlatform
+  - NoBack
   - 
   - 
   - 

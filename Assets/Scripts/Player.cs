@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public static Player Instance;
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip atacksound;
 
+    public static Player Instance;
+    public float currentHealth;
+    public float maxHealth = 5.0f;
     public float moveSpeed = 8f;
     public float jumpForce = 14f;
     public float airControlDamping = 0.2f;
@@ -16,7 +22,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
     private float horizontalInput;
-    private bool isGrounded;
+    public bool isGrounded;
     private bool jumpRequested;
     public bool facingRight = true;
 
@@ -50,6 +56,8 @@ public class Player : MonoBehaviour
     private static readonly int GroundedHash = Animator.StringToHash("IsGrounded"); 
     private static readonly int ShootHash = Animator.StringToHash("Shoot");
     private static readonly int DashHash = Animator.StringToHash("Dash");
+    private static readonly int HurtHash = Animator.StringToHash("Hurt");
+    private static readonly int DeathHash = Animator.StringToHash("Death");
 
     private void Awake()
     {
@@ -76,7 +84,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -276,4 +284,35 @@ public class Player : MonoBehaviour
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         }
     }
+    
+    public void Die()
+    {
+        rb.velocity = Vector2.zero;
+        this.enabled = false;
+        animator.SetTrigger(DeathHash);
+        // Por ahora solo desactivamos el GameObject
+        Destroy(gameObject, 2f);
+        //Load Scene despues de segs
+    }
+
+    public void TakePlayerDamage(float damage)
+    {
+        currentHealth-= damage;
+        if (currentHealth<=0)
+        {
+            Die();
+        }
+        else
+        {
+            animator.SetTrigger(HurtHash);
+        }
+    }
+    private void PlaySound()
+    {
+        if (audioSource != null && atacksound != null)
+        {
+            audioSource.PlayOneShot(atacksound);
+        }
+    }
+
 }
