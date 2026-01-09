@@ -208,17 +208,19 @@ public class EnemyBehaviour : MonoBehaviour
         lastAttackTime = Time.time;
         anim.SetTrigger(AttackHash); // Disparamos la animación
 
-        PerformDamageCheck();
+        //PerformDamageCheck();
     }
 
-    private void PerformDamageCheck()
+    public void PerformDamageCheck()
     {
+        Debug.Log($"EVENTO DISPARADO: Ataque");
+
         // Detectamos si el jugador sigue en rango de golpe
         Collider2D hitPlayer = Physics2D.OverlapCircle(transform.position, attackRange, playerLayer);
 
         if (hitPlayer != null)
         {
-            Debug.Log("¡Goblin golpeó al jugador!");
+            Debug.Log("¡Enemigo golpeó al jugador!");
             Player.Instance.TakePlayerDamage(1.0f);
         }
     }

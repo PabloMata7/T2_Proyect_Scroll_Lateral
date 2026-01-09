@@ -268,14 +268,12 @@ public class BossBehaviour : MonoBehaviour
 
         Debug.Log($"EVENTO DISPARADO: Tipo {attackType}");
 
-        // Al llamarlo aquí, el daño es instantáneo al iniciar la animación.
-        // Para un Boss, se siente mejor si el daño ocurre justo cuando golpea visualmente (Anim Event).
         Collider2D hitPlayer = Physics2D.OverlapCircle(transform.position, attackRange, playerLayer);
 
         if (hitPlayer != null)
         {
             // Asumiendo que Player tiene TakeDamage
-            hitPlayer.GetComponent<Player>().TakePlayerDamage(damage); 
+            Player.Instance.TakePlayerDamage(1.0f);
             Debug.Log($"¡Golpe confirmado! Daño: {damage}");
         }
     }
