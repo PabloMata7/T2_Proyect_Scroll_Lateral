@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip atacksound;
+
     public float moveSpeed = 3f;
     public float detectionRange = 6f;   // Distancia para empezar a perseguir
     public float attackRange = 1.2f;    // Distancia para golpear
@@ -30,6 +34,8 @@ public class EnemyBehaviour : MonoBehaviour
     private static readonly int AttackHash = Animator.StringToHash("Attack");
     private static readonly int DeathHash = Animator.StringToHash("Death");
     private static readonly int HurtHash = Animator.StringToHash("Hurt");
+
+    
 
     private void Awake()
     {
@@ -230,5 +236,12 @@ public class EnemyBehaviour : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange); // Rango ataque
+    }
+    private void PlaySound()
+    {
+        if(audioSource != null && atacksound != null)
+        {
+            audioSource.PlayOneShot(atacksound);
+        }
     }
 }
