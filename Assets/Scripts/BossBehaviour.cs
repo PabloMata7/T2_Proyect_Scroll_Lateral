@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BossBehaviour : MonoBehaviour
 {
-    AudioSource audioSource;
-    AudioClip atackSound;
-    AudioClip atackSound2;
-    AudioClip atackSound3;
-    AudioClip deathSound;
+    public AudioSource audioSource;
+    public AudioClip atackSound;
+    public AudioClip atackSound2;
+    public AudioClip atackSound3;
+    public AudioClip deathSound;
     [Header("Estadísticas")]
     public float moveSpeed = 3f;
     public float detectionRange = 6f;
@@ -41,7 +41,6 @@ public class BossBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update

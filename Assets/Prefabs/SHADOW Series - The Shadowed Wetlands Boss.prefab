@@ -102,6 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ce38a8bf5b70049a40c16fc63bbedc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: -6410676341941172510}
+  atackSound: {fileID: 8300000, guid: 44110e8c0deed454f9c7f2dcccf2d8ff, type: 3}
+  atackSound2: {fileID: 8300000, guid: ca356a96bf87747619b2ab2707578c2d, type: 3}
+  atackSound3: {fileID: 8300000, guid: 68f5702fd61b44f1b8aba81af57878dc, type: 3}
+  deathSound: {fileID: 8300000, guid: 6dbcae179c8484df2aca6a324046dda6, type: 3}
   moveSpeed: 3
   detectionRange: 10
   attackRange: 2.2
@@ -121,7 +126,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6dbcae179c8484df2aca6a324046dda6, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
