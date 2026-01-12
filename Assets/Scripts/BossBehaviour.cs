@@ -5,6 +5,9 @@ using UnityEngine;
 public class BossBehaviour : MonoBehaviour
 {
     AudioSource audioSource;
+    AudioClip atackSound;
+    AudioClip atackSound2;
+    AudioClip atackSound3;
     AudioClip deathSound;
     [Header("Estadísticas")]
     public float moveSpeed = 3f;
@@ -38,6 +41,7 @@ public class BossBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -301,5 +305,26 @@ public class BossBehaviour : MonoBehaviour
 
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(transform.position, attackRange * 1.5f);
+    }
+    private void AttackSound1()
+    {
+        if (audioSource != null && atackSound != null)
+        {
+            audioSource.PlayOneShot(atackSound);
+        }
+    }
+    private void AttackSound2()
+    {
+        if (audioSource != null && atackSound2 != null)
+        {
+            audioSource.PlayOneShot(atackSound2);
+        }
+    }
+    private void AttackSound3()
+    {
+        if (audioSource != null && atackSound3 != null)
+        {
+            audioSource.PlayOneShot(atackSound3);
+        }
     }
 }
