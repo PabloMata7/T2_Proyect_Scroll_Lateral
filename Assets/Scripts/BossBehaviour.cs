@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class BossBehaviour : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip atackSound;
+    public AudioClip atackSound2;
+    public AudioClip atackSound3;
+    public AudioClip deathSound;
     [Header("Estadísticas")]
     public float moveSpeed = 3f;
     public float detectionRange = 6f;
@@ -282,6 +287,10 @@ public class BossBehaviour : MonoBehaviour
     {
         this.enabled = false; // Desactiva la IA
         anim.SetTrigger(DeathHash);
+        if (audioSource != null && deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
         Destroy(gameObject, 5f);
     }
 
@@ -295,5 +304,26 @@ public class BossBehaviour : MonoBehaviour
 
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(transform.position, attackRange * 1.5f);
+    }
+    private void AttackSound1()
+    {
+        if (audioSource != null && atackSound != null)
+        {
+            audioSource.PlayOneShot(atackSound);
+        }
+    }
+    private void AttackSound2()
+    {
+        if (audioSource != null && atackSound2 != null)
+        {
+            audioSource.PlayOneShot(atackSound2);
+        }
+    }
+    private void AttackSound3()
+    {
+        if (audioSource != null && atackSound3 != null)
+        {
+            audioSource.PlayOneShot(atackSound3);
+        }
     }
 }

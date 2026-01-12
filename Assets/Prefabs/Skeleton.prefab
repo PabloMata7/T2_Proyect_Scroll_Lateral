@@ -113,6 +113,7 @@ MonoBehaviour:
   audioSource: {fileID: 1311186724705373563}
   atackSound: {fileID: 8300000, guid: f386292352dcb4c4fa7bdd495804ced1, type: 3}
   hitSound: {fileID: 8300000, guid: be9caa1e84a461447afe44e92faa16f6, type: 3}
+  deathSound: {fileID: 8300000, guid: a34a90a82291e4112a0c0cd7014dae2f, type: 3}
   moveSpeed: 3
   detectionRange: 6
   attackRange: 1.5
