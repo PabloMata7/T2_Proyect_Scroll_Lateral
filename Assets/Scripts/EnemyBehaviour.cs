@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class EnemyBehaviour : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class EnemyBehaviour : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip atackSound;
     public AudioClip hitSound;
+    public AudioClip deathSound;
 
     public float moveSpeed = 3f;
     public float detectionRange = 6f;   // Distancia para empezar a perseguir
@@ -160,7 +162,10 @@ public class EnemyBehaviour : MonoBehaviour
 
         // 2. Animación de muerte
         anim.SetTrigger(DeathHash);
-
+        if (audioSource != null && deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
         // 3. Destruir el objeto (con delay para que se vea la animación)
         Destroy(gameObject, 2f);
     }

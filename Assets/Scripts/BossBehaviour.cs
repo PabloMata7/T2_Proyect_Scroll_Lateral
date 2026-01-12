@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BossBehaviour : MonoBehaviour
 {
+    AudioSource audioSource;
+    AudioClip deathSound;
     [Header("Estadísticas")]
     public float moveSpeed = 3f;
     public float detectionRange = 6f;
@@ -282,6 +284,10 @@ public class BossBehaviour : MonoBehaviour
     {
         this.enabled = false; // Desactiva la IA
         anim.SetTrigger(DeathHash);
+        if (audioSource != null && deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
         Destroy(gameObject, 5f);
     }
 
