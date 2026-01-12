@@ -2531,7 +2531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4854514667447797301, guid: 66d78505d66de614799fc7f6de633285, type: 3}
       propertyPath: playerLayer.m_Bits
-      value: 0
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 6234564799455487048, guid: 66d78505d66de614799fc7f6de633285, type: 3}
       propertyPath: m_LocalScale.x
