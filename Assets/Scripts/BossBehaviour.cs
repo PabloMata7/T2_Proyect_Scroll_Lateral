@@ -37,6 +37,7 @@ public class BossBehaviour : MonoBehaviour
     private static readonly int HurtHash = Animator.StringToHash("Hurt");  
     private static readonly int DeathHash = Animator.StringToHash("Death");
 
+    public GameObject DoorOpen;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -324,6 +325,17 @@ public class BossBehaviour : MonoBehaviour
         if (audioSource != null && atackSound3 != null)
         {
             audioSource.PlayOneShot(atackSound3);
+        }
+    }
+    private void OnDestroy()
+    {
+        if (DoorOpen != null)
+        {
+            Door script = DoorOpen.GetComponent<Door>();
+            if (script != null)
+            {
+                script.OpenDoor();
+            }
         }
     }
 }
