@@ -292,7 +292,7 @@ public class Player : MonoBehaviour
         animator.SetTrigger(DeathHash);
         // Por ahora solo desactivamos el GameObject
         Destroy(gameObject, 2f);
-        //Load Scene despues de segs
+        SceneManager.LoadScene("Credits");
     }
 
     public void TakePlayerDamage(float damage)
@@ -314,5 +314,11 @@ public class Player : MonoBehaviour
             audioSource.PlayOneShot(atacksound);
         }
     }
-
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("end"))
+        {
+            SceneManager.LoadScene("Credits");
+        }
+    }
 }
