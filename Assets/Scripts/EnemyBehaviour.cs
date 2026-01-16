@@ -30,6 +30,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private float lastAttackTime;
     private bool facingRight = true;
+    private float facingThreshold = 0.5f;
 
     private bool isProvoked = false;
 
@@ -172,15 +173,27 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void MoveToPlayer()
     {
-        // Dirección normalizada hacia el jugador (solo eje X para plataformas)
-        float direction = Mathf.Sign(playerTransform.position.x - transform.position.x);
+        float xDifference = playerTransform.position.x - transform.position.x;
 
+        if (Mathf.Abs(xDifference) < facingThreshold)
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y);
+            return;
+        }
+
+        // Dirección normalizada hacia el jugador (solo eje X para plataformas)
+        float direction = Mathf.Sign(xDifference);
+        
         // Aplicamos velocidad manteniendo la gravedad (velocity.y)
         rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
     }
 
     private void LookAtPlayer()
     {
+        float xDifference = playerTransform.position.x - transform.position.x;
+
+        if (Mathf.Abs(xDifference) < facingThreshold) return;
+
         if (playerTransform.position.x > transform.position.x && !facingRight)
         {
             Flip();
