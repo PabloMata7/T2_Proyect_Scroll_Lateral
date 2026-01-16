@@ -11,6 +11,7 @@ public class BossBehaviour : MonoBehaviour
     public AudioClip deathSound;
     [Header("Estadísticas")]
     public float moveSpeed = 3f;
+    public float moveboost = 2f;
     public float detectionRange = 6f;
     public float attackRange = 1.2f;
     public float attackCooldown = 1.5f;
@@ -222,6 +223,7 @@ public class BossBehaviour : MonoBehaviour
         }
         else if (healthPercent > 0.33f) // FASE 2 (Vida Media)
         {
+            moveSpeed = moveSpeed + moveboost;
             // 30% Básico, 70% Fuerte (Attack2)
             if (roll < 30) hashSelected = Attack2Hash;
             else hashSelected = Attack1Hash;
@@ -229,6 +231,7 @@ public class BossBehaviour : MonoBehaviour
         }
         else // FASE 3 (Vida Baja)
         {
+            moveSpeed = moveSpeed + moveboost;
             // 20% Básico, 30% Fuerte, 50% ULTI (Attack3)
             if (roll < 20) hashSelected = Attack2Hash;
             else if (roll < 50) hashSelected = Attack1Hash;

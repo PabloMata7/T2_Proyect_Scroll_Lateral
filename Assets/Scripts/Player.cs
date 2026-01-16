@@ -15,9 +15,9 @@ public class Player : MonoBehaviour
     public float moveSpeed = 8f;
     public float jumpForce = 14f;
     public float airControlDamping = 0.2f;
-
-    public Transform groundCheck;     
-    public float groundCheckRadius = 0.2f; 
+    public float delay = 4.0f;
+    public Transform groundCheck;
+    public float groundCheckRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
 
     private Rigidbody2D rb;
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
     // Pre-cálculo de Hashes del Animator
     // Evitamos usar strings en el Update (ahorro de CPU y GC)
     private static readonly int SpeedHash = Animator.StringToHash("Speed");
-    private static readonly int GroundedHash = Animator.StringToHash("IsGrounded"); 
+    private static readonly int GroundedHash = Animator.StringToHash("IsGrounded");
     private static readonly int ShootHash = Animator.StringToHash("Shoot");
     private static readonly int DashHash = Animator.StringToHash("Dash");
     private static readonly int HurtHash = Animator.StringToHash("Hurt");
@@ -108,7 +108,7 @@ public class Player : MonoBehaviour
     {
         // SI ESTAMOS DASHEANDO NO SE EJECUTA
         if (isDashing) return;
-        
+
         CheckGround();
         Move();
 
@@ -238,7 +238,7 @@ public class Player : MonoBehaviour
 
     private void InitializeGhostPool()
     {
-        for (int i = 0; i < poolSize; i++) 
+        for (int i = 0; i < poolSize; i++)
         {
             GameObject ghostObj = Instantiate(ghostPrefab);
             ghostObj.SetActive(false);
@@ -284,21 +284,19 @@ public class Player : MonoBehaviour
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         }
     }
-    
+
     public void Die()
     {
         rb.velocity = Vector2.zero;
         this.enabled = false;
         animator.SetTrigger(DeathHash);
-        // Por ahora solo desactivamos el GameObject
-        Destroy(gameObject, 2f);
-        SceneManager.LoadScene("Credits");
+        StartCoroutine(Esperar(delay));
     }
 
     public void TakePlayerDamage(float damage)
     {
-        currentHealth-= damage;
-        if (currentHealth<=0)
+        currentHealth -= damage;
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -320,5 +318,10 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("Credits");
         }
+    }
+    IEnumerator Esperar(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("Credits");
     }
 }
