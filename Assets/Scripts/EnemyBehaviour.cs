@@ -39,8 +39,8 @@ public class EnemyBehaviour : MonoBehaviour
     private static readonly int DeathHash = Animator.StringToHash("Death");
     private static readonly int HurtHash = Animator.StringToHash("Hurt");
 
-    
-
+    private float soundDelay = 0.5f;
+    private float soundTime = 0f;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -56,6 +56,8 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        soundTime += Time.deltaTime;
+
         // Buscamos al jugador dinámicamente si lo perdemos, o usamos Player.Instance.
         if (playerTransform == null && Player.Instance != null)
         {
@@ -117,6 +119,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             LookAtPlayer();
         }
+
     }
 
     private void FixedUpdate()
@@ -268,9 +271,11 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void HitSound()
     {
-        if (audioSource != null && hitSound != null)
+        if (audioSource != null && hitSound != null && soundTime>soundDelay)
         {
             audioSource.PlayOneShot(hitSound);
+            Debug.Log("sonido");
+            soundTime = 0;
         }
     }
 
