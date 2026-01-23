@@ -19,7 +19,7 @@ public class SpikesDamage : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Player.Instance.TakePlayerDamage(1.0f);
+            Player.Instance.TakePlayerDamage(1);
         }
     }
 }
