@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,7 @@ public class BossBehaviour : MonoBehaviour
     public float attackRange = 1.2f;
     public float attackCooldown = 1.5f;
     public int maxHealth = 15; 
-    [SerializeField] private int currentHealth;
+    public int currentHealth;
 
     public LayerMask playerLayer;
 
@@ -40,6 +41,8 @@ public class BossBehaviour : MonoBehaviour
     private static readonly int DeathHash = Animator.StringToHash("Death");
 
     public GameObject DoorOpen;
+
+    public event Action<int, int> OnBossHealthChanged;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -121,6 +124,8 @@ public class BossBehaviour : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
+        OnBossHealthChanged?.Invoke(currentHealth, maxHealth);
 
         if (currentState != State.Attacking)
         {
@@ -226,7 +231,7 @@ public class BossBehaviour : MonoBehaviour
         float healthPercent = (float)currentHealth / maxHealth;
 
         // 2. Factor Aleatorio (Weighted Random)
-        int roll = Random.Range(0, 100);
+        int roll = UnityEngine.Random.Range(0, 100);
 
         int hashSelected = 0;
 
