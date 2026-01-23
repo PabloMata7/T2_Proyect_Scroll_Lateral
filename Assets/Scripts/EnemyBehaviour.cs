@@ -249,7 +249,7 @@ public class EnemyBehaviour : MonoBehaviour
         if (hitPlayer != null)
         {
             Debug.Log("¡Enemigo golpeó al jugador!");
-            Player.Instance.TakePlayerDamage(1.0f);
+            Player.Instance.TakePlayerDamage(1);
         }
     }
 

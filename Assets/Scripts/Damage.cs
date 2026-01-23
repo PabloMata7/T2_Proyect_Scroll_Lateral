@@ -21,7 +21,7 @@ public class Damage : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Spikes") || other.gameObject.CompareTag("Enemy"))
         {
-            Player.Instance.TakePlayerDamage(1.0f);
+            Player.Instance.TakePlayerDamage(1);
         }
     }
     

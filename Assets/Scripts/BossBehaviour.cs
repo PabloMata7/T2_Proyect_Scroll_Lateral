@@ -298,7 +298,7 @@ public class BossBehaviour : MonoBehaviour
         if (hitPlayer != null)
         {
             // Asumiendo que Player tiene TakeDamage
-            Player.Instance.TakePlayerDamage(1.0f);
+            Player.Instance.TakePlayerDamage(1);
             Debug.Log($"¡Golpe confirmado! Daño: {damage}");
         }
     }
