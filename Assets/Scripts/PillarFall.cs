@@ -26,7 +26,7 @@ public class PillarFall : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Player.Instance.TakePlayerDamage(1);
+            Player.Instance.TakePlayerDamage(1.0f);
             Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Ground"))
