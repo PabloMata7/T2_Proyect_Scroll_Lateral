@@ -32,7 +32,7 @@ public class SliderBossHealth : MonoBehaviour
         {
             bossScript.OnBossHealthChanged += UpdateHealthBar;
 
-            UpdateHealthBar(bossScript.currentHealth, bossScript.maxHealth);
+            UpdateHealthBar(bossScript.maxHealth, bossScript.maxHealth);
         }
         else
         {
@@ -43,6 +43,12 @@ public class SliderBossHealth : MonoBehaviour
 
     private void Update()
     {
+        if (bossScript == null)
+        {
+            canvasGroup.alpha = 0f; // Esconder
+            return; // No seguir ejecutando el código para evitar errores
+        }
+
         if (isActivated) return;
 
         if (Player.Instance != null && bossScript != null)
@@ -65,15 +71,6 @@ public class SliderBossHealth : MonoBehaviour
         Debug.Log("¡Jefe detectado! Barra de vida activada.");
     }
 
-    private void DestroyBar()
-    {
-        isActivated = true;
-
-        canvasGroup.alpha = 0f;
-
-        Debug.Log("¡Jefe Muerto! Barra de vida desactivada.");
-    }
-
     private void OnDestroy()
     {
         if (bossScript != null)
@@ -87,10 +84,6 @@ public class SliderBossHealth : MonoBehaviour
         float value = (float)current / max;
         Debug.Log($"UI RECIBE: Vida {current}/{max} - Slider: {value}");
         healthSlider.value = value;
-        if (healthSlider.value < 0f)
-        {
-            DestroyBar();
-        }
     }
 
     private void OnDrawGizmosSelected()

@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 40926646}
   - component: {fileID: 40926645}
   - component: {fileID: 40926644}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PilarFall (2)
   m_TagString: Destruction
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 71711720}
   - component: {fileID: 71711721}
   - component: {fileID: 71711718}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sensor Move
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 321155748}
   - component: {fileID: 321155749}
   - component: {fileID: 321155746}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PilarFall
   m_TagString: Destruction
   m_Icon: {fileID: 0}
@@ -1913,7 +1913,7 @@ GameObject:
   - component: {fileID: 466015794}
   - component: {fileID: 466015793}
   - component: {fileID: 466015792}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sensor Dash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2436,7 +2436,7 @@ GameObject:
   - component: {fileID: 534267129}
   - component: {fileID: 534267130}
   - component: {fileID: 534267127}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PilarFall (1)
   m_TagString: Destruction
   m_Icon: {fileID: 0}
@@ -5207,7 +5207,7 @@ GameObject:
   - component: {fileID: 862047210}
   - component: {fileID: 862047209}
   - component: {fileID: 862047208}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sensor Shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5654,7 +5654,7 @@ GameObject:
   - component: {fileID: 963335921}
   - component: {fileID: 963335920}
   - component: {fileID: 963335919}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sensor Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9635,7 +9635,7 @@ GameObject:
   - component: {fileID: 1766908530}
   - component: {fileID: 1766908527}
   - component: {fileID: 1766908531}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Entrance
   m_TagString: Entrance
   m_Icon: {fileID: 0}
