@@ -7068,7 +7068,7 @@ GameObject:
   - component: {fileID: 959212139}
   - component: {fileID: 959212138}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Dead
   m_TagString: dead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
