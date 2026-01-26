@@ -320,6 +320,11 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("Credits");
         }
+        if (other.gameObject.CompareTag("dead"))
+        {
+            Die();
+            SceneManager.LoadScene("Credits");
+        }
     }
     IEnumerator Esperar(float delay)
     {

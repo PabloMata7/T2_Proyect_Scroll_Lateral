@@ -12,6 +12,7 @@ TagManager:
   - Despawn
   - Entrance
   - end
+  - dead
   layers:
   - Default
   - TransparentFX
