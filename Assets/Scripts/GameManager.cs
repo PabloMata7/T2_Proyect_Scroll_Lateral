@@ -42,4 +42,9 @@ public class GameManager : MonoBehaviour
         OnLivesChanged?.Invoke(currentLives);
 
     }
+    
+    public void lifeReset()
+    {
+        currentLives = maxLives;
+    }
 }

@@ -11,6 +11,7 @@ public class UiControl : MonoBehaviour
     public void Playbutton()
     {
         SceneManager.LoadScene("SampleScene");
+        GameManager.Instance.lifeReset();
     }
     public void CreditsButton()
     {
