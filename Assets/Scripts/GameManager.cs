@@ -46,5 +46,7 @@ public class GameManager : MonoBehaviour
     public void lifeReset()
     {
         currentLives = maxLives;
+
+        OnLivesChanged?.Invoke(currentLives);
     }
 }

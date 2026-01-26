@@ -9,9 +9,12 @@ public class CanvasManager : MonoBehaviour
 {
     public static CanvasManager Instance;
 
-    public List<string> activeScenes;
+    public List<string> gameplayScenes;
+    public List<string> creditsScenes;
 
-    private Canvas canvas;
+    public GameObject gameplayContainer;
+    public GameObject mainMenuContainer;
+    public GameObject creditsContainer;
 
     private void Awake()
     {
@@ -20,7 +23,6 @@ public class CanvasManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject); // El Canvas entero viaja entre escenas
-            canvas = GetComponent<Canvas>();
         }
         else
         {
@@ -48,17 +50,34 @@ public class CanvasManager : MonoBehaviour
 
     private void CheckVisibility(string sceneName)
     {
-        // Si la escena actual está en nuestra lista blanca, activamos el Canvas
-        if (activeScenes.Contains(sceneName))
+        if (gameplayContainer == null || mainMenuContainer == null)
         {
-            canvas.enabled = true;
-            Debug.Log($"HUD: Activado en {sceneName}");
+            Debug.LogWarning("CanvasManager: ¡No has asignado el GameplayContainer!");
+            return;
+        }
+
+        // Si la escena actual está en nuestra lista blanca, activamos el Canvas
+        if (gameplayScenes.Contains(sceneName))
+        {
+            SetContainers(true, false, false);
+            Debug.Log($"HUD: Visible en {sceneName}");
+        }
+        else if(creditsScenes.Contains(sceneName))
+        {
+            SetContainers(false, false, true);
+            Debug.Log($"Créditos: Visible en {sceneName}");
         }
         else
         {
-            // Si es Menú o Créditos, lo desactivamos (pero sigue existiendo en memoria)
-            canvas.enabled = false;
-            Debug.Log($"HUD: Ocultado en {sceneName}");
+            SetContainers(false, true, false);
+            Debug.Log($"HUD: Oculto en {sceneName}");
         }
+    }
+
+    private void SetContainers(bool game, bool menu, bool credits)
+    {
+        if (gameplayContainer != null) gameplayContainer.SetActive(game);
+        if (mainMenuContainer != null) mainMenuContainer.SetActive(menu);
+        if (creditsContainer != null) creditsContainer.SetActive(credits);
     }
 }
