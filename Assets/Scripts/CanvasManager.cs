@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class CanvasManager : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class CanvasManager : MonoBehaviour
     public GameObject gameplayContainer;
     public GameObject mainMenuContainer;
     public GameObject creditsContainer;
+
+    public GameObject tutorialPanel;
+
+    public TextMeshProUGUI tutorialTextComponent;
 
     private void Awake()
     {
@@ -79,5 +84,34 @@ public class CanvasManager : MonoBehaviour
         if (gameplayContainer != null) gameplayContainer.SetActive(game);
         if (mainMenuContainer != null) mainMenuContainer.SetActive(menu);
         if (creditsContainer != null) creditsContainer.SetActive(credits);
+    }
+
+    public void ShowTutorial(string message, float duration)
+    {
+        // 1. Cambiamos el texto (si asignaste el componente)
+        if (tutorialTextComponent != null)
+        {
+            tutorialTextComponent.text = message;
+        }
+
+        // 2. Encendemos el panel
+        if (tutorialPanel != null)
+        {
+            tutorialPanel.SetActive(true);
+
+            // 3. Reiniciamos cualquier temporizador anterior y empezamos uno nuevo
+            StopAllCoroutines();
+            StartCoroutine(HideTutorialAfterTime(duration));
+        }
+    }
+
+    private IEnumerator HideTutorialAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        if (tutorialPanel != null)
+        {
+            tutorialPanel.SetActive(false);
+        }
     }
 }

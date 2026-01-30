@@ -742,7 +742,7 @@ Transform:
   m_GameObject: {fileID: 71711717}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -120.2, y: -4.8, z: -0.08221558}
+  m_LocalPosition: {x: -122.01, y: -4.8, z: -0.08221558}
   m_LocalScale: {x: 1.975, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -760,8 +760,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7574788129392594fa0e2398fa1cb311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  time: 2.5
+  message: A = Left  D = Right
+  displayTime: 2.5
 --- !u!4 &94808631 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5498426439176886817, guid: 3d46b6e3549e8534c8b6dc8968427152, type: 3}
@@ -2603,8 +2603,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7574788129392594fa0e2398fa1cb311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  time: 2.5
+  message: E = Dash
+  displayTime: 2.5
 --- !u!4 &466015794
 Transform:
   m_ObjectHideFlags: 0
@@ -6160,8 +6160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7574788129392594fa0e2398fa1cb311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  time: 2.5
+  message: Left Click = Shoot
+  displayTime: 2.5
 --- !u!4 &862047210
 Transform:
   m_ObjectHideFlags: 0
@@ -6171,7 +6171,7 @@ Transform:
   m_GameObject: {fileID: 862047207}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.66, y: -2.74, z: -0.08221558}
+  m_LocalPosition: {x: -74.32, y: -1.71, z: -0.08221558}
   m_LocalScale: {x: 2.4672, y: 2.4672, z: 2.4672}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7065,8 +7065,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7574788129392594fa0e2398fa1cb311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  time: 2.5
+  message: Space = Jump
+  displayTime: 2.5
 --- !u!4 &963335921
 Transform:
   m_ObjectHideFlags: 0
@@ -7076,7 +7076,7 @@ Transform:
   m_GameObject: {fileID: 963335918}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -100.9, y: -3.7, z: -0.08221558}
+  m_LocalPosition: {x: -93.94, y: -3.7, z: -0.08221558}
   m_LocalScale: {x: 2.2927675, y: 2.5026689, z: 1.2917}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12990,8 +12990,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7574788129392594fa0e2398fa1cb311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  time: 2.5
+  message: 
+  displayTime: 2.5
 --- !u!114 &1766908531
 MonoBehaviour:
   m_ObjectHideFlags: 0
