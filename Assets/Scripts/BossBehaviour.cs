@@ -325,7 +325,7 @@ public class BossBehaviour : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, detectionRange); // Rango visión
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange); // Rango ataque
+        Gizmos.DrawWireSphere(transform.position, attackRange * 1.5f); // Rango ataque
 
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(transform.position, attackRange * 1.5f);
