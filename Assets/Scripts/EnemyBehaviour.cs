@@ -6,6 +6,7 @@ using UnityEngine.Animations;
 public class EnemyBehaviour : MonoBehaviour
 {
     [Header("Audio")]
+    public bool isDead = false;
     public AudioSource audioSource;
     public AudioClip atackSound;
     public AudioClip hitSound;
@@ -164,6 +165,7 @@ public class EnemyBehaviour : MonoBehaviour
         //GetComponent<Collider2D>().enabled = false;
         this.enabled = false; // Desactiva este script
 
+        isDead = true;
         // 2. Animación de muerte
         anim.SetTrigger(DeathHash);
         if (audioSource != null && deathSound != null)
