@@ -14,7 +14,7 @@ public class BossRoomTrigger : MonoBehaviour
         {
             _hasTriggered = true;
 
-            // Buscar al enemigo especial
+            // buscar al enemigo específico
             GameObject enemy = GameObject.Find("SkeletonIdleEasterEgg");
 
             bool enemyIsDead = false;
@@ -27,20 +27,20 @@ public class BossRoomTrigger : MonoBehaviour
             }
             else
             {
-                // Si ya no existe, está muerto
+                // si ya no existe, está muerto
                 enemyIsDead = true;
             }
 
             string sceneToLoad = enemyIsDead ? easterEggScene : finalBossScene;
 
-            // Si ScreenFader existe, úsalo
+            // si ScreenFader existe, se usa
             if (ScreenFader.Instance != null)
             {
                 ScreenFader.Instance.LoadSceneWithFade(sceneToLoad);
             }
             else
             {
-                // Si NO existe, carga la escena directamente
+                // si no existe, carga la escena directamente
                 SceneManager.LoadScene(sceneToLoad);
             }
         }

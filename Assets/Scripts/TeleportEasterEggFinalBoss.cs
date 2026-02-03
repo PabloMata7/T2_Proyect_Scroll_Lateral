@@ -38,7 +38,14 @@ public class TeleportOnKeyUI : MonoBehaviour
     {
         if (playerInside && Input.GetKeyDown(keyToPress))
         {
-            ScreenFader.Instance.LoadSceneWithFade(sceneToLoad);
+            if (ScreenFader.Instance != null)
+            {
+                ScreenFader.Instance.LoadSceneWithFade(sceneToLoad);
+            }
+            else
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
+            }
         }
     }
 }

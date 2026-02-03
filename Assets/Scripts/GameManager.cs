@@ -49,4 +49,9 @@ public class GameManager : MonoBehaviour
 
         OnLivesChanged?.Invoke(currentLives);
     }
+
+    public void UpdateLive()
+    {
+        OnLivesChanged?.Invoke(currentLives);
+    }
 }
