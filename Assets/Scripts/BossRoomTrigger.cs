@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BossRoomTrigger : MonoBehaviour
 {
-    [SerializeField] private string sceneToLoad = "FinalBoss";
+    [SerializeField] private string sceneIfAlive = "FinalBoss";   // o "Final Boss" si tu escena se llama así
+    [SerializeField] private string sceneIfDead = "EasterEgg";
 
     private bool _hasTriggered = false;
 
@@ -13,9 +14,22 @@ public class BossRoomTrigger : MonoBehaviour
         if (other.CompareTag("Player") && !_hasTriggered)
         {
             _hasTriggered = true;
+
+            // Buscamos al enemigo por nombre
+            GameObject enemy = GameObject.Find("SkeletonIdleEasterEgg");
+
+            bool enemyIsDead = false;
+
+            // Si NO lo encontramos, asumimos que está muerto (lo destruiste en Die())
+            if (enemy == null)
+            {
+                enemyIsDead = true;
+            }
+
+            string sceneToLoad = enemyIsDead ? sceneIfDead : sceneIfAlive;
+
             Debug.Log("Iniciando viaje a: " + sceneToLoad);
 
-            // Llamamos a la nueva funci�n de carga
             ScreenFader.Instance.LoadSceneWithFade(sceneToLoad);
         }
     }

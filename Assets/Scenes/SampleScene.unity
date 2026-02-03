@@ -13905,7 +13905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3635820474958207528, guid: 9bd15a30f6c64af4e951e3f476755c2b, type: 3}
       propertyPath: m_Name
-      value: Skeleton Idle (3)
+      value: SkeletonIdleEasterEgg
       objectReference: {fileID: 0}
     - target: {fileID: 3635820474958207528, guid: 9bd15a30f6c64af4e951e3f476755c2b, type: 3}
       propertyPath: m_TagString
