@@ -1347,6 +1347,7 @@ MonoBehaviour:
   gameplayScenes:
   - SampleScene
   - FinalBoss
+  - EasterEgg
   creditsScenes:
   - Credits
   gameplayContainer: {fileID: 2217453800690390056}
