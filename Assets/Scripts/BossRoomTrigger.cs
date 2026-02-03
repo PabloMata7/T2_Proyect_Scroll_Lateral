@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossRoomTrigger : MonoBehaviour
@@ -15,7 +13,6 @@ public class BossRoomTrigger : MonoBehaviour
         {
             _hasTriggered = true;
 
-            // Buscamos al enemigo especial
             GameObject enemy = GameObject.Find("SkeletonIdleEasterEgg");
 
             bool enemyIsDead = false;
@@ -28,14 +25,10 @@ public class BossRoomTrigger : MonoBehaviour
             }
             else
             {
-                // Si ya no existe, está muerto
-                enemyIsDead = true;
+                enemyIsDead = true; // si ya no existe, está muerto
             }
 
-            // Elegimos la escena según si está muerto o no
             string sceneToLoad = enemyIsDead ? easterEggScene : finalBossScene;
-
-            Debug.Log("Iniciando viaje a: " + sceneToLoad);
 
             ScreenFader.Instance.LoadSceneWithFade(sceneToLoad);
         }
